@@ -39,7 +39,7 @@ print(data["Pclass"].value_counts())
 print(data["Survived"].value_counts())
 
 #Sorting data
-data.sort_values(by="Age")
-print(data.info())
+print(data.sort_values(by="Age"))
+print(data.sort_values(by=["Age","Pclass"],ascending=False))
 
 
