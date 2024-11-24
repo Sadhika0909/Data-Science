@@ -19,8 +19,10 @@ data1=data.rename(columns={"Fare":"Ticket Fare"})
 print(data1.info())
 
 print(data[["Fare","Pclass"]].groupby("Pclass").mean())
+print("@@@@@@@@@@@@")
 
-print(data.sort_values(by="Age",ascending=False))
+a=data.sort_values(by="Age",ascending=False)
+print(a.head(3))
 
 data["Name Uppercase"]=data["Name"].str.upper()
 print(data.head())
