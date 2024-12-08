@@ -60,7 +60,7 @@ plt.subplot(222)
 plt.plot(t1,waves(t1),"mo")
 plt.title("Exponential Decay with Cosine(Coarse)")
 #second subplot
-plt.subplot(225)
+plt.subplot(223)
 plt.plot(t2,np.cos(2*np.pi*t2))
 plt.title("Cosine Wave (Fine)")
 plt.tight_layout()
