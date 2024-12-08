@@ -45,3 +45,23 @@ plt.ylabel("Hours")
 plt.title("Stack plot of activities")
 plt.legend()
 plt.show()
+
+#Subplot
+import numpy as np
+
+def waves(t):
+    return np.exp(-t)*np.cos(2*np.pi*t)
+#generate time intervals for plotting
+t1=np.arange(0,5,0.1)
+t2=np.arange(0,5,0.2)
+plt.figure()
+#first subplot
+plt.subplot(222)
+plt.plot(t1,waves(t1),"mo")
+plt.title("Exponential Decay with Cosine(Coarse)")
+#second subplot
+plt.subplot(225)
+plt.plot(t2,np.cos(2*np.pi*t2))
+plt.title("Cosine Wave (Fine)")
+plt.tight_layout()
+plt.show()
