@@ -32,4 +32,4 @@ model.fit(x_train,y_train)
 #testing the computer
 predictions=model.predict(x_test)
 #printing accuracy
-print("Accuracy: ",metrics.accuracy_score(predictions,y_test))
+print("Accuracy: ",metrics.accuracy_score(predictions,y_test)*100,"%")
