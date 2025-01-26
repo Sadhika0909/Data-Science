@@ -23,7 +23,7 @@ a=px.scatter(ttcon,x=ttcon.index,#country names
              size="Confirmed",#bubble size
              color=ttcon.index,
              title="Number of confirmed cases per country")
-a.write_html("Covid cases",auto_open=True)
+a.write_html("Covid cases.html",auto_open=True)
 
 
 
