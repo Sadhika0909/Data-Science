@@ -64,5 +64,19 @@ sb=go.Figure(data=[go.Bar(name="Confirmed cases",x=t["State"],y=t["Confirmed"]),
 sb.update_layout(title="Most affected states in Brazil",barmode="stack",height=600)
 sb.write_html("Most affected states in Brazil.html",auto_open=True)
 
+#Stacked bar for India
+si=go.Figure(data=[go.Bar(name="Confirmed cases",x=top["State"],y=top["Confirmed"]),
+                    go.Bar(name="Recovered cases",x=top["State"],y=top["Recovered"]),
+                    go.Bar(name="Death cases",x=top["State"],y=top["Deaths"])])
+si.update_layout(title="Most affected states in India",barmode="stack",height=600)
+si.write_html("Most affected states in India.html",auto_open=True)
+
+#Stacked bar for Russia
+sr=go.Figure(data=[go.Bar(name="Confirmed cases",x=tt["State"],y=tt["Confirmed"]),
+                    go.Bar(name="Recovered cases",x=tt["State"],y=tt["Recovered"]),
+                    go.Bar(name="Death cases",x=tt["State"],y=tt["Deaths"])])
+sr.update_layout(title="Most affected states in Russia",barmode="stack",height=600)
+sr.write_html("Most affected states in Russia.html",auto_open=True)
+
 
 
