@@ -27,5 +27,9 @@ a=set(data["Salary"])
 print(a)
 
 #mapping the data into numarical data using map function
-data["Salary"]=data["Salary"].map({"<=50K":0,">50K":1}).astype(int)
+data["Salary"]=data["Salary"].map({" <=50K":0," >50K":1}).astype(int)
 print(data.head())
+data["Gender"]=data["Gender"].map({" Male":0," Female":1}).astype(int)
+print(data.head())
+data["Race"]=data["Race"].map({" White":0," Black":1," Asian-Pac-Islander":2," Amer-Indian-Eskimo":3," Other":4})
+data["Mariatal_status"]=data["Mariatal_status"].map({" Married-civ-spouse":0," Never-married":1," Divorced":2," Separated":3," Widowed":4," Married-spouse-absent":5," Married-AF-spouse":6})
