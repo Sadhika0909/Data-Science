@@ -35,7 +35,9 @@ data["Gender"]=data["Gender"].map({" Male":0," Female":1}).astype(int)
 print(data.head())
 data["Race"]=data["Race"].map({" White":0," Black":1," Asian-Pac-Islander":2," Amer-Indian-Eskimo":3," Other":4}).astype(int)
 data["mariatal"]=data["mariatal"].map({" Married-civ-spouse":0," Never-married":1," Divorced":2," Separated":3," Widowed":4," Married-spouse-absent":5," Married-AF-spouse":6}).astype(int)
-data["Relationship"]=data["Relationship"].map({"Husband":0,"Not-in-family":1,"Own-child":2,"Unmarried":3,"Wife":4,"Other-relative":5}).astype(int)
+print(data["Relationship"].isna().sum())
+print("------")
+data["Relationship"]=data["Relationship"].map({" Husband":0," Not-in-family":1," Own-child":2," Unmarried":3," Wife":4," Other-relative":5}).astype(int)
 
 
 data.groupby("Race").Salary.mean().plot(kind="bar")
@@ -48,6 +50,10 @@ data.groupby("Gender").Salary.mean().plot(kind="bar")
 plt.show()
 
 data.groupby("Relationship").Salary.mean().plot(kind="bar")
+plt.show()
+
+#data.groupby("Salary").Salary.mean().plot(kind="bar")
+#plt.show()
 plt.show()
 
 #data.groupby("Salary").Salary.mean().plot(kind="bar")
