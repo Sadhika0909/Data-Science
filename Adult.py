@@ -22,11 +22,11 @@ for i in data.columns:
     print(data[i].value_counts())
 
 #dropping unused data from the dataset
-data.drop(["id nb","mariatal","capital gain","capital loss","Origin"],axis=1,inplace=True)
+data.drop(["id nb","capital gain","capital loss","Origin"],axis=1,inplace=True)
 
 #unique categories
-a=set(data["Salary"])
-print(a)
+Salary=set(data["Salary"])
+print(Salary)
 
 #mapping the data into numarical data using map function
 data["Salary"]=data["Salary"].map({" <=50K":0," >50K":1}).astype(int)
@@ -35,11 +35,20 @@ data["Gender"]=data["Gender"].map({" Male":0," Female":1}).astype(int)
 print(data.head())
 data["Race"]=data["Race"].map({" White":0," Black":1," Asian-Pac-Islander":2," Amer-Indian-Eskimo":3," Other":4}).astype(int)
 data["mariatal"]=data["mariatal"].map({" Married-civ-spouse":0," Never-married":1," Divorced":2," Separated":3," Widowed":4," Married-spouse-absent":5," Married-AF-spouse":6}).astype(int)
-#data["Degree"]=data["Degree"].map({""})
+data["Relationship"]=data["Relationship"].map({"Husband":0,"Not-in-family":1,"Own-child":2,"Unmarried":3,"Wife":4,"Other-relative":5}).astype(int)
 
 
-a=data.groupby("Race").sum()
-figure1=go.Figure()
-figure1.add_trace(go.Bar(x=a.index,y=a["Race"],fill="tonexty",line_color="red"))
-figure1.update_layout(title="Different races")
-figure1.write_html("bargraph.html",auto_open=True)
+data.groupby("Race").Salary.mean().plot(kind="bar")
+plt.show()
+
+data.groupby("mariatal").Salary.mean().plot(kind="bar")
+plt.show()
+
+data.groupby("Gender").Salary.mean().plot(kind="bar")
+plt.show()
+
+data.groupby("Relationship").Salary.mean().plot(kind="bar")
+plt.show()
+
+#data.groupby("Salary").Salary.mean().plot(kind="bar")
+#plt.show()
