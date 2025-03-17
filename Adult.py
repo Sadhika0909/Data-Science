@@ -22,7 +22,7 @@ for i in data.columns:
     print(data[i].value_counts())
 
 #dropping unused data from the dataset
-data.drop(["ID_nb","Mariatal_status","Capital_gain","Capital_loss","Origin"],axis=1,inplace=True)
+data.drop(["id nb","mariatal","capital gain","capital loss","Origin"],axis=1,inplace=True)
 
 #unique categories
 a=set(data["Salary"])
@@ -33,8 +33,8 @@ data["Salary"]=data["Salary"].map({" <=50K":0," >50K":1}).astype(int)
 print(data.head())
 data["Gender"]=data["Gender"].map({" Male":0," Female":1}).astype(int)
 print(data.head())
-data["Race"]=data["Race"].map({" White":0," Black":1," Asian-Pac-Islander":2," Amer-Indian-Eskimo":3," Other":4})
-data["mariatal"]=data["mariatal"].map({" Married-civ-spouse":0," Never-married":1," Divorced":2," Separated":3," Widowed":4," Married-spouse-absent":5," Married-AF-spouse":6})
+data["Race"]=data["Race"].map({" White":0," Black":1," Asian-Pac-Islander":2," Amer-Indian-Eskimo":3," Other":4}).astype(int)
+data["mariatal"]=data["mariatal"].map({" Married-civ-spouse":0," Never-married":1," Divorced":2," Separated":3," Widowed":4," Married-spouse-absent":5," Married-AF-spouse":6}).astype(int)
 #data["Degree"]=data["Degree"].map({""})
 
 
