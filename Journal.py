@@ -4,7 +4,7 @@ def add_entry():
     entry=input("Write your diary entry: ")
     file=open("journal.txt","a")
     date=datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    file.write("[{}]: {}".format(date,entry))
+    file.write("[{}]: {}\n".format(date,entry))
     print("Your entry is saved")
 
 def view_entry():
@@ -23,5 +23,9 @@ while True:
         add_entry()
     elif a==2:
         view_entry()
+    elif a==3:
+        print("Exiting journal")
+        break
+
 
 
