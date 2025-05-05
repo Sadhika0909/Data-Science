@@ -22,3 +22,23 @@ plt.figure(figsize=(8,4))
 sns.histplot(data["Age"])
 plt.title("Histogram")
 plt.show()
+
+plt.figure(figsize=(14,4))
+sns.histplot(data["job type"])
+plt.title("Histogram")
+plt.show()
+
+plt.figure(figsize=(8,4))
+sns.histplot(data["ed exp"])
+plt.title("Histogram")
+plt.show()
+
+plt.figure(figsize=(13,4))
+sns.histplot(data["mariatal"])
+plt.title("Histogram")
+plt.show()
+
+plt.figure(figsize=(10,4))
+sns.histplot(data["Race"])
+plt.title("Histogram")
+plt.show()
